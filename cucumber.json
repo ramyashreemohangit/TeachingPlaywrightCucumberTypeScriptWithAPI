@@ -1,0 +1,19 @@
+{
+  "default": {
+    "paths": ["features/**/*.feature"],
+    "dryRun": false,
+    "retry": 0,
+    "parallel": 0,
+    "forceExit": true,
+    "require": [
+      "features/step-definitions/**/*.ts",
+      "features/support/**/*.ts"
+    ],
+    "requireModule": ["ts-node/register"],
+    "format": [
+      "html:Reports/cucumber-report.html",
+      "json:Reports/cucumber-report.json",
+      "junit:Reports/e2e-junit-report.xml"
+    ]
+  }
+}

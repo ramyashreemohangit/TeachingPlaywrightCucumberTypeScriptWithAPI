@@ -1,0 +1,79 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login;user-should-be-able-to-login-successful",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "User should be able to login successful",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 610481700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "user navigates to the application",
+            "match": {
+              "location": "features\\step-definitions\\loginSteps.ts:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4909456399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "user logs in",
+            "match": {
+              "location": "features\\step-definitions\\loginSteps.ts:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7505739200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "logout link should be visible",
+            "match": {
+              "location": "features\\step-definitions\\loginSteps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 749400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 68607600
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login",
+    "tags": [],
+    "uri": "features\\login.feature"
+  }
+]
