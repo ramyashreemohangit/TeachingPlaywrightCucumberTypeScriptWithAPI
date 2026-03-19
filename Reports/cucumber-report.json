@@ -6,7 +6,7 @@
         "description": "",
         "id": "login;user-should-be-able-to-login-successful",
         "keyword": "Scenario",
-        "line": 3,
+        "line": 4,
         "name": "User should be able to login successful",
         "steps": [
           {
@@ -14,59 +14,85 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 750288800
+              "duration": 1061657400
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 5,
+            "line": 6,
             "name": "user navigates to the application",
             "match": {
               "location": "features\\step-definitions\\loginSteps.ts:4"
             },
             "result": {
               "status": "passed",
-              "duration": 5512895899
+              "duration": 7342764600
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 6,
+            "line": 7,
             "name": "user logs in",
             "match": {
               "location": "features\\step-definitions\\loginSteps.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 7704341599
+              "duration": 7887220300
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 7,
+            "line": 8,
             "name": "logout link should be visible",
             "match": {
               "location": "features\\step-definitions\\loginSteps.ts:14"
             },
             "result": {
               "status": "passed",
-              "duration": 440108900
+              "duration": 390007699
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 9,
+            "line": 10,
             "name": "user clicks on \"Admin\" menu",
             "match": {
-              "location": "features\\step-definitions\\userManagement.ts:4"
+              "location": "features\\step-definitions\\userManagementSteps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 7435127200
+              "duration": 1948449800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "user searches for an existing employee",
+            "match": {
+              "location": "features\\step-definitions\\userManagementSteps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 962889800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "searched employee should be visible in the search result under \"Username\" column",
+            "match": {
+              "location": "features\\step-definitions\\userManagementSteps.ts:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1427864399
             }
           },
           {
@@ -74,19 +100,29 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3453252399
+              "duration": 72435199
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@userManagement",
+            "line": 1
+          }
+        ],
         "type": "scenario"
       }
     ],
     "id": "login",
-    "line": 1,
+    "line": 2,
     "keyword": "Feature",
     "name": "Login",
-    "tags": [],
+    "tags": [
+      {
+        "name": "@userManagement",
+        "line": 1
+      }
+    ],
     "uri": "features\\userManagement.feature"
   }
 ]
