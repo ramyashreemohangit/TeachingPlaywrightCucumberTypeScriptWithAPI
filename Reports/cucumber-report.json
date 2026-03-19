@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 610481700
+              "duration": 750288800
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4909456399
+              "duration": 5512895899
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7505739200
+              "duration": 7704341599
             }
           },
           {
@@ -53,7 +53,20 @@
             },
             "result": {
               "status": "passed",
-              "duration": 749400
+              "duration": 440108900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "user clicks on \"Admin\" menu",
+            "match": {
+              "location": "features\\step-definitions\\userManagement.ts:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7435127200
             }
           },
           {
@@ -61,7 +74,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 68607600
+              "duration": 3453252399
             }
           }
         ],
@@ -74,6 +87,6 @@
     "keyword": "Feature",
     "name": "Login",
     "tags": [],
-    "uri": "features\\login.feature"
+    "uri": "features\\userManagement.feature"
   }
 ]

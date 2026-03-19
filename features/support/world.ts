@@ -2,6 +2,7 @@ import { IWorldOptions, setWorldConstructor, World } from '@cucumber/cucumber';
 import type { BrowserContext, Page } from '@playwright/test';
 import { LoginPage } from '../../pages/loginPage';
 //import type { APIRequestContext } from '@playwright/test';
+import { UserManagementPage } from '../../pages/userManagement';
 
 // 1) Describe what's in "this" (the Scenario's backpack)
 export interface CustomWorld extends World {
@@ -9,12 +10,14 @@ export interface CustomWorld extends World {
   context: BrowserContext;
   page: Page;
   loginPage: LoginPage;
+  userManagementPage: UserManagementPage;
 }
 
 class MyWorld extends World implements CustomWorld {
   context!: BrowserContext;
   page!: Page;
- loginPage!: LoginPage;
+  loginPage!: LoginPage;
+  userManagementPage!: UserManagementPage;
 
   constructor(options: IWorldOptions) {
     super(options);

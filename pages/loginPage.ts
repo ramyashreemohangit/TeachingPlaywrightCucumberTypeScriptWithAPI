@@ -8,6 +8,8 @@ export class LoginPage {
   readonly loginButton: Locator;
   readonly dashboardText: Locator;
   readonly loginTitle : Locator;
+  readonly logOutLink: Locator;
+  readonly profile: Locator;
 
   constructor(page: Page) {
      this.page = page;
@@ -17,6 +19,9 @@ export class LoginPage {
      this.loginButton = page.getByRole('button', { name: 'Login' });
      this.dashboardText = page.getByRole('heading', { name: 'Dashboard' });
      this.loginTitle = page.locator('h5[class*="orangehrm-login-title"]');
+     this.logOutLink = page.getByRole('menuitem', { name: 'Logout' });
+
+     this.profile = page.locator('span[class*=oxd-userdropdown-tab]');
   }
 
   async navigate() {
@@ -24,7 +29,6 @@ export class LoginPage {
     const url = process.env.APPLICATION_URL;
     if (!url) throw new Error('APPLICATION_URL is not set');
     await this.page.goto(url);
-    //await this.page.waitForSelector('h5[class*="orangehrm-login-title"]');
     await expect(this.loginTitle).toBeVisible();
   }
 
@@ -38,5 +42,11 @@ export class LoginPage {
     const result = await this.dashboardText.isVisible();
     console.log("RESULT IS "+result);
     await expect(this.dashboardText).toBeVisible();
+  }
+
+  async logOutLinkVisibility() {
+    await this.profile.click();
+    await expect(this.logOutLink).toBeVisible();
+    await this.dashboardText.click({force: true});
   }
 }

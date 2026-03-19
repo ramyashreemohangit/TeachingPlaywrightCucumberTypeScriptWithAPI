@@ -12,5 +12,5 @@ When(/^user logs in$/, async function (this: CustomWorld) {
 
 
 Then(/^logout link should be visible$/, async function (this: CustomWorld) {
-
+    await this.loginPage.logOutLinkVisibility();
 })
