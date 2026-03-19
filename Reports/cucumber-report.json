@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 750288800
+              "duration": 996123599
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5512895899
+              "duration": 5820264999
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7704341599
+              "duration": 7596424800
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 440108900
+              "duration": 382259600
             }
           },
           {
@@ -62,11 +62,37 @@
             "line": 9,
             "name": "user clicks on \"Admin\" menu",
             "match": {
-              "location": "features\\step-definitions\\userManagement.ts:4"
+              "location": "features\\step-definitions\\userManagementSteps.ts:5"
             },
             "result": {
               "status": "passed",
-              "duration": 7435127200
+              "duration": 6259900100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "user searches for an existing employee",
+            "match": {
+              "location": "features\\step-definitions\\userManagementSteps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2980019399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "searched employee should be visible in the search result under \"Username\" column",
+            "match": {
+              "location": "features\\step-definitions\\userManagementSteps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 73271000
             }
           },
           {
@@ -74,7 +100,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3453252399
+              "duration": 95416400
             }
           }
         ],

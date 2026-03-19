@@ -1,0 +1,17 @@
+import { Given, When, Then } from '@cucumber/cucumber';
+import type { CustomWorld } from '../support/world';
+import searchUserTestData from '../../test-data/userManagementTestData/searchUser.json'
+
+Given('user clicks on {string} menu', async function (this: CustomWorld, menuName: string) {
+    await this.page.waitForTimeout(5000);
+    await this.userManagementPage.clickMenu(menuName);
+    
+})
+
+When('user searches for an existing employee', async function (this: CustomWorld) {
+    await this.userManagementPage.searchEmployee(searchUserTestData);
+})
+
+Then('searched employee should be visible in the search result under {string} column', async function (this: CustomWorld, tableHeaderName: string) {
+    await this.userManagementPage.verifyEmployeeVisible(searchUserTestData, tableHeaderName);
+})
