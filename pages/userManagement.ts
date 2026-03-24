@@ -1,5 +1,7 @@
 import { Page, Locator, expect } from "@playwright/test";
 
+let text: any;
+
 export class UserManagementPage {
   readonly page: Page;
   readonly adminMenu: Locator;
@@ -7,6 +9,10 @@ export class UserManagementPage {
   readonly searchBtn: Locator;
   readonly table: Locator;
   readonly tableHeader: Locator;
+  readonly readUserNameField: Locator;
+  readonly deleteBtn: Locator;
+  readonly popUpWindowDeleteBtn: Locator;
+  readonly searchDeletedUserName: Locator;
 
   constructor(page: Page) {
      this.page = page;
@@ -15,6 +21,10 @@ export class UserManagementPage {
      this.searchBtn = page.locator('button[type="Submit"]');
      this.table = page.locator('div.oxd-table');
      this.tableHeader = page.locator('div.oxd-table-header div[class*="oxd-table-th"]');
+     this.readUserNameField = page.locator('div[class="oxd-table-body"] .oxd-table-card');
+     this.deleteBtn = page.locator('i[class*="bi-trash"]');
+     this.popUpWindowDeleteBtn = page.locator('div[class*="orangehrm-dialog-popup"] i[class*="bi-trash"]');
+     this.searchDeletedUserName = page.getByText('No Records Found');
   }
 
   async clickMenu(menuName: string) {
@@ -27,8 +37,15 @@ export class UserManagementPage {
     }
   }
 
-  async searchEmployee(searchUserTestData: any) {
+  async searchEmployee(searchUserTestData?: any, deletedFlag?: boolean) {
+    console.log("SEARCHED TEXT AFTER DELETION "+searchUserTestData);
+
+    if(deletedFlag === false || deletedFlag === undefined) {
      await this.userNameField.fill(searchUserTestData.users[0].userName);
+    }
+    else if(deletedFlag === true) {
+       await this.userNameField.fill(searchUserTestData);
+    }
      await this.searchBtn.click();
        await this.page.waitForTimeout(2000);
   }
@@ -71,6 +88,18 @@ export class UserManagementPage {
   }
 }
 
+async deleteUser() {
+  await this.page.pause();
+  text = await this.readUserNameField.nth(2).getByRole('cell').nth(1).textContent();
+  console.log("DELETING USER NAME IS "+text);
+    await this.deleteBtn.nth(2).click();
+    await this.popUpWindowDeleteBtn.click();
+}
 
-
+async verifyUserDeletion() {
+  let deletedFlag = true;
+  await this.searchEmployee(text, deletedFlag);
+  await this.page.waitForTimeout(2000);
+  await expect(this.searchDeletedUserName).toBeVisible();
+}
 }

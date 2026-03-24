@@ -10,6 +10,8 @@ export class LoginPage {
   readonly loginTitle : Locator;
   readonly logOutLink: Locator;
   readonly profile: Locator;
+  readonly upgradeBtn: Locator;
+  readonly bookDemoBtn: Locator;
 
   constructor(page: Page) {
      this.page = page;
@@ -20,8 +22,9 @@ export class LoginPage {
      this.dashboardText = page.getByRole('heading', { name: 'Dashboard' });
      this.loginTitle = page.locator('h5[class*="orangehrm-login-title"]');
      this.logOutLink = page.getByRole('menuitem', { name: 'Logout' });
-
      this.profile = page.locator('span[class*=oxd-userdropdown-tab]');
+     this.upgradeBtn = page.locator('a[href*="https://orangehrm.com/open-source"]');
+     this.bookDemoBtn = page.locator('a[href="/en/book-a-free-demo"]');
   }
 
   async navigate() {
@@ -35,10 +38,12 @@ export class LoginPage {
   async login(username: string, password: string) {
     await this.emailInput.fill(username);
     await this.passwordInput.fill(password);
-    await Promise.all([
-        this.loginButton.click(),
-        this.dashboardText.waitFor({ state: 'visible' })
-    ]);
+    await this.loginButton.click();
+    await this.dashboardText.waitFor({ state: 'visible' });
+
+    let readText = await this.upgradeBtn.textContent();
+    console.log("UPGRADE BUTTON TEXT INSIDE LOGIN METHOD "+readText);
+    
     const result = await this.dashboardText.isVisible();
     console.log("RESULT IS "+result);
     await expect(this.dashboardText).toBeVisible();
@@ -48,5 +53,20 @@ export class LoginPage {
     await this.profile.click();
     await expect(this.logOutLink).toBeVisible();
     await this.dashboardText.click({force: true});
+  }
+
+  bookDemo(page: Page) {
+    return page.locator('a[href="/en/book-a-free-demo"]');
+  }
+
+  async upgrade() {
+   const [newPage] = await Promise.all([
+    this.page.context().waitForEvent('page'),
+    this.upgradeBtn.click()
+  ]);
+
+  await newPage.waitForLoadState();
+  const bookDemoText = await this.bookDemo(newPage).textContent();
+  console.log("BOOK DEMO BUTTON TEXT IN NEW PAGE: " + bookDemoText);
   }
 }

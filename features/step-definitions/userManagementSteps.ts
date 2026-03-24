@@ -15,3 +15,11 @@ When('user searches for an existing employee', async function (this: CustomWorld
 Then('searched employee should be visible in the search result under {string} column', async function (this: CustomWorld, tableHeaderName: string) {
     await this.userManagementPage.verifyEmployeeVisible(searchUserTestData, tableHeaderName);
 })
+
+ When('user deletes an employee', async function (this: CustomWorld) {
+    await this.userManagementPage.deleteUser();
+ })
+
+ Then('employee details should be deleted from the application', async function (this: CustomWorld) {
+    await this.userManagementPage.verifyUserDeletion();
+ })

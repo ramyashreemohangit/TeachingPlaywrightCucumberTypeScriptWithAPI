@@ -14,3 +14,7 @@ When(/^user logs in$/, async function (this: CustomWorld) {
 Then(/^logout link should be visible$/, async function (this: CustomWorld) {
     await this.loginPage.logOutLinkVisibility();
 })
+
+When(/^user wants to upgrade$/, async function (this: CustomWorld) {
+    await this.loginPage.upgrade();
+})
