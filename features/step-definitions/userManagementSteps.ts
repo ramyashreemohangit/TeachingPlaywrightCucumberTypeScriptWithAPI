@@ -1,11 +1,11 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import type { CustomWorld } from '../support/world';
 import searchUserTestData from '../../test-data/userManagementTestData/searchUser.json'
+import { clickMenu } from '../support/utils';
 
 Given('user clicks on {string} menu', async function (this: CustomWorld, menuName: string) {
     await this.page.waitForTimeout(5000);
-    await this.userManagementPage.clickMenu(menuName);
-    
+    await clickMenu(this.page, menuName);
 })
 
 When('user searches for an existing employee', async function (this: CustomWorld) {

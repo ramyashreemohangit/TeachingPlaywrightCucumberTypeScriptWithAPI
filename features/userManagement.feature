@@ -1,4 +1,4 @@
-Feature: Login
+Feature: User Management
 
 Scenario: User should be able to successfully search an existing employee
 

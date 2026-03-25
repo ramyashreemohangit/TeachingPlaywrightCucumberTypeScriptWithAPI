@@ -1,11 +1,15 @@
 <?xml version="1.0"?>
-<testsuite name="Cucumber" time="26.405" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-03-19T09:27:48.884Z">
-  <testcase classname="Login" name="User should be able to login successful" time="24.227">
+<testsuite name="Cucumber" time="179.105" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-03-25T14:27:08.073Z">
+  <testcase classname="PIM" name="User should be able to successfully add a new employee" time="178.625">
+    <failure type="TargetClosedError" message="page.screenshot: Target page, context or browser has been closed&#xA;Call log:&#xA;[2m  - taking page screenshot[22m&#xA;"><![CDATA[    at MyWorld.<anonymous> (C:\Users\MY PC\Documents\QA\TeachingPlaywrightCucumberTypeScriptWithAPI\features\support\hooks.ts:29:33)]]></failure>
     <system-out><![CDATA[Given user navigates to the application.....................................passed
 When user logs in...........................................................passed
 Then logout link should be visible..........................................passed
-When user clicks on "Admin" menu............................................passed
-And user searches for an existing employee..................................passed
-Then searched employee should be visible in the search result under "Username" column..passed]]></system-out>
+When user clicks on "PIM" menu..............................................passed
+And user adds an employee...................................................passed
+Then new employee details should be added to the application................passed
+When user enters their personal details.....................................failed
+And user clicks on "Save" button............................................skipped
+Then personal details of employee should be saved in the application........skipped]]></system-out>
   </testcase>
 </testsuite>

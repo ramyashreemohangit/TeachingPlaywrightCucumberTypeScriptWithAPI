@@ -6,6 +6,7 @@ import type { CustomWorld } from './world';
 import { request } from '@playwright/test';
 setDefaultTimeout(60 * 1000 * 2);
 import { UserManagementPage } from '../../pages/userManagement';
+import { PIMPage } from '../../pages/pimPage';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ Before(async function (this: CustomWorld) {
   this.page = await this.context.newPage();
   this.loginPage = new LoginPage(this.page);
   this.userManagementPage = new UserManagementPage(this.page);
+  this.pimPage = new PIMPage(this.page);
 });
 
 After(async function (this: CustomWorld, { result, pickle }) {

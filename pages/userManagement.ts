@@ -27,16 +27,6 @@ export class UserManagementPage {
      this.searchDeletedUserName = page.getByText('No Records Found');
   }
 
-  async clickMenu(menuName: string) {
-    switch(menuName.toLowerCase()) {
-        case "admin":
-            await this.adminMenu.click();
-            break;
-        default:
-            throw new Error(`Menu with name ${menuName} not found`);
-    }
-  }
-
   async searchEmployee(searchUserTestData?: any, deletedFlag?: boolean) {
     console.log("SEARCHED TEXT AFTER DELETION "+searchUserTestData);
 

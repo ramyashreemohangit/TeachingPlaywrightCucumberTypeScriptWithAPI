@@ -4,17 +4,17 @@
     "elements": [
       {
         "description": "",
-        "id": "login;user-should-be-able-to-login-successful",
+        "id": "pim;user-should-be-able-to-successfully-add-a-new-employee",
         "keyword": "Scenario",
         "line": 3,
-        "name": "User should be able to login successful",
+        "name": "User should be able to successfully add a new employee",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 996123599
+              "duration": 549655100
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5820264999
+              "duration": 4451317900
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 7596424800
+              "duration": 7531294799
             }
           },
           {
@@ -53,54 +53,95 @@
             },
             "result": {
               "status": "passed",
-              "duration": 382259600
+              "duration": 118284400
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 9,
-            "name": "user clicks on \"Admin\" menu",
+            "name": "user clicks on \"PIM\" menu",
             "match": {
-              "location": "features\\step-definitions\\userManagementSteps.ts:5"
+              "location": "features\\step-definitions\\userManagementSteps.ts:6"
             },
             "result": {
               "status": "passed",
-              "duration": 6259900100
+              "duration": 6347616400
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 10,
-            "name": "user searches for an existing employee",
+            "name": "user adds an employee",
             "match": {
-              "location": "features\\step-definitions\\userManagementSteps.ts:11"
+              "location": "features\\step-definitions\\pimSteps.ts:4"
             },
             "result": {
               "status": "passed",
-              "duration": 2980019399
+              "duration": 6869098000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 11,
-            "name": "searched employee should be visible in the search result under \"Username\" column",
+            "name": "new employee details should be added to the application",
             "match": {
-              "location": "features\\step-definitions\\userManagementSteps.ts:15"
+              "location": "features\\step-definitions\\pimSteps.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 73271000
+              "duration": 15025764500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "user enters their personal details",
+            "match": {
+              "location": "features\\step-definitions\\pimSteps.ts:12"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 120006185299,
+              "error_message": "Error: function timed out, ensure the promise resolves within 120000 milliseconds\n    at Timeout.<anonymous> (C:\\Users\\MY PC\\Documents\\QA\\TeachingPlaywrightCucumberTypeScriptWithAPI\\node_modules\\@cucumber\\cucumber\\src\\time.ts:52:14)\n    at listOnTimeout (node:internal/timers:581:17)\n    at processTimers (node:internal/timers:519:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "user clicks on \"Save\" button",
+            "match": {
+              "location": "features\\step-definitions\\pimSteps.ts:16"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "personal details of employee should be saved in the application",
+            "match": {
+              "location": "features\\step-definitions\\pimSteps.ts:19"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 95416400
+              "status": "failed",
+              "duration": 17706275599,
+              "error_message": "page.screenshot: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\n    at MyWorld.<anonymous> (C:\\Users\\MY PC\\Documents\\QA\\TeachingPlaywrightCucumberTypeScriptWithAPI\\features\\support\\hooks.ts:29:33)"
             }
           }
         ],
@@ -108,11 +149,11 @@
         "type": "scenario"
       }
     ],
-    "id": "login",
+    "id": "pim",
     "line": 1,
     "keyword": "Feature",
-    "name": "Login",
+    "name": "PIM",
     "tags": [],
-    "uri": "features\\userManagement.feature"
+    "uri": "features\\pim.feature"
   }
 ]
