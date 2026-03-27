@@ -1,15 +1,7 @@
 <?xml version="1.0"?>
-<testsuite name="Cucumber" time="179.105" tests="1" skipped="0" failures="1" errors="0" timestamp="2026-03-25T14:27:08.073Z">
-  <testcase classname="PIM" name="User should be able to successfully add a new employee" time="178.625">
-    <failure type="TargetClosedError" message="page.screenshot: Target page, context or browser has been closed&#xA;Call log:&#xA;[2m  - taking page screenshot[22m&#xA;"><![CDATA[    at MyWorld.<anonymous> (C:\Users\MY PC\Documents\QA\TeachingPlaywrightCucumberTypeScriptWithAPI\features\support\hooks.ts:29:33)]]></failure>
-    <system-out><![CDATA[Given user navigates to the application.....................................passed
-When user logs in...........................................................passed
-Then logout link should be visible..........................................passed
-When user clicks on "PIM" menu..............................................passed
-And user adds an employee...................................................passed
-Then new employee details should be added to the application................passed
-When user enters their personal details.....................................failed
-And user clicks on "Save" button............................................skipped
-Then personal details of employee should be saved in the application........skipped]]></system-out>
+<testsuite name="Cucumber" time="17.413" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-03-27T09:07:26.081Z">
+  <testcase classname="Login via API" name="Verify that application allows user to login via API and lands on article creation page" time="16.062">
+    <system-out><![CDATA[When the user logs in via API with valid credentials and creates an article..passed
+Then the article should be created successfully.............................passed]]></system-out>
   </testcase>
 </testsuite>

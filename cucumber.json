@@ -1,6 +1,6 @@
 {
   "default": {
-    "paths": ["features/**/pim.feature"],
+    "paths": ["features/**/ApiIntegrationWithUI.feature"],
     "dryRun": false,
     "retry": 0,
     "parallel": 0,
