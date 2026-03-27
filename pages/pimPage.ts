@@ -31,14 +31,14 @@ export class PIMPage {
   async addEmployee() {
     await this.addEmployeeLink.click();
     await this.uploadEmployeePhoto();
-    await this.firstNameField.fill("Playwright19"); // ----> DERIVE FROM TEST DATA and UTILS FILE RANDOM STRING HOME WORK
-    await this.lastNameField.fill("Cucumber19"); // ----> DERIVE FROM TEST DATA and UTILS FILE RANDOM STRING
-    await this.emplIDField.fill("EMP0044"); // ----> DERIVE FROM TEST DATA and UTILS FILE RANDOM STRING
+    await this.firstNameField.fill("Playwright19"); 
+    await this.lastNameField.fill("Cucumber19"); 
+    await this.emplIDField.fill("EMP0044"); 
     await this.saveBtn.click();
   }
 
   async verifyNewlyAddedEmployeeDetails() {
-    await this.page.waitForTimeout(15000);  //----> HOME WORK
+    await this.page.waitForTimeout(15000);  
     const fullName = await this.empFullName.innerText();
     console.log("Employee Full Name:", fullName);
     expect(fullName).toBe("Playwright19 Cucumber19"); // -> TAKE FROM TEST DATA FILE
@@ -58,6 +58,5 @@ export class PIMPage {
     await this.page.reload();
     await this.page.waitForTimeout(10000);
     //READ FROM DOB FIELD AND COMPARE WHAT WE HAVE ENTERED WITH WHAT IS READ FROM DATE OF BIRTH AND IT SHOULD BE SAME
-    //HOME WORK
   }
 }
